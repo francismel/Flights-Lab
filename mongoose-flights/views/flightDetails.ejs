@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+   
+
+        <h2>Airline: <span><%=flight.airline%></span> </h2>
+        <h2>Flight Number: <span><%=flight.flightNo%></span></h2>
+        <h2>Departing From: <span><%=flight.airport%></span></h2>
+        <h2>Departure Time: <span><%=flight.departs%></span></h2>
+
+        <% flight.destinations.forEach(function(dest,idx){%> 
+
+            <h2>Arriving at: <span><%=dest.airport%></span></h2>
+            <h2>Arrival time: <span><%=dest.arrival%></span></h2>
+
+        <% }); %> 
+
+
+        <form id="addDestination" action="/flights/<%=flight.id%>/destinations" method="POST">
+
+            
+      
+            <br><br>
+            <label><span>Add Destination:</span></label>
+      
+            <select name="airport" class = "inputs">
+              <option value='AUS'>AUS</option>
+              <option value="DFW">DFW</option>
+              <option value="DEN">DEN</option>
+              <option value="LAX">LAX</option>
+              <option value="SAN">SAN</option>
+            </select> <br>
+            
+            <label><span>Time of Arrival:</span></label>
+            <input type="datetime-local" name="arrival" class = "inputs"><br>
+
+            <button type="submit">Add Arrival Info!</button>
+
+        </form>   
+        <br><br><br>
+       
+        <a href = "/flights/<%=flight.id%>/tickets">Purchase a Ticket!</a> <br><br><br>
+
+        <% tickets.forEach(function(ticket,idx){ %>
+
+            <h3>Ticket: <%=idx+1%></h3>
+            <p1>Seat: <%=ticket.seat%></p1><br>
+            <p1>Price: $<%=ticket.price%></p1><br><br>
+
+        <% }); %>
+    
+
+   <a id = "back" href = "/flights">Back To Home Page</a>
+
+    
+  </body>
+</html>

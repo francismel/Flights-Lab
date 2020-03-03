@@ -1,0 +1,76 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(0, 0, 0);
+  background-color: rgb(180, 180, 238);
+}
+
+a {
+  color: rgb(0, 138, 192);
+  font-size: 20px;
+}
+a:hover{
+  font-size:22px;
+}
+
+.inputs{
+  width: 150px;
+  margin: 6px 0px 15px 0px;
+}
+
+#flights{
+  display:flex;
+  flex-direction: left;
+  font-size:18px;
+}
+
+.details{
+  margin-top:20px;
+  position:absolute;
+  left: 1070px;
+}
+
+
+.flightNo{
+  position: absolute;
+  left: 250px;
+}
+
+.no:hover{
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+
+#upcoming{
+  font-size:36px;
+}
+
+.departure{
+  position: absolute;
+  left: 500px;
+}
+span{
+  font-size: 17px;
+  color: rgb(0, 21, 141);
+}
+
+
+span:hover{
+  text-decoration: underline;
+  font-size:19px;
+}
+
+#flightInfo{
+  margin-top: 60px;
+  display: flex;
+  flex-direction: left;
+}
+
+#addFlight{
+  margin-top: 50px;
+}
+#form{
+  display: flex;
+  flex-direction: column;
+}

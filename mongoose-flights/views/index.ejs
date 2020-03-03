@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 id ="upcoming"><%= title %></h1>
+
+    <div id = "flightInfo">
+        <h1 class = "airline">Airline</h1>
+        <h1 class = "flightNo">Flight No.</h1>
+        <h1 class = "departure">Departs At</h1>
+
+    </div>
+
+    
+
+    <% flights.forEach(function(flight,idx){ %>
+
+    <form action= "/flights/<%=flight.id%>" method="GET" autocomplete="off">
+
+        <div id="flights">
+        <p class = "airline"><%=flight.airline%> (<%=flight.airport%>)</p>
+        <p class = "flightNo no"><%=flight.flightNo%></p>
+        <p class = "departure"><%=flight.departs%></p>
+        <button class = "details" type="submit">Details</button>
+        </div>
+
+
+    
+    </form>
+
+    <% }); %>
+
+  
+
+   <a href = "/flights/new">Add Your Flight Info</a>
+
+    
+  </body>
+</html>
